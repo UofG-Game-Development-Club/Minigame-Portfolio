@@ -1,10 +1,10 @@
 # Add your game
 
-Knowing Git, terminal commands, or version control isn't necessary to contribute! Having a GitHub account is enough to contribute. You can follow the instructions below if you're not comfortable with Git, or scroll down further for instructions if you are comfortable with Git.
+Knowing Git, terminal commands, or version control isn't necessary to contribute! Having a GitHub account is enough. You can follow the instructions below if you're not comfortable with Git, or scroll down further for instructions if you are comfortable with Git.
 
 ## No Git Knowledge Required
 
-## 1. Make your game folder
+### Make your game folder
 
 1. On this page, click the green Code button, then download the ZIP, and unzip the folder.
 2. Find the folder `games/_template`. Copy it to where you know you can find it.
@@ -22,18 +22,30 @@ Knowing Git, terminal commands, or version control isn't necessary to contribute
     }
    ```
 
-   Obviously, `optionalthumbnail` is optional. Add a picture (PNG, JPG, or SVG) to your folder and put its filename here. If you skip it, your game gets a colored tile with its first letter for the thumbnail.
+   Obviously, `optionalthumbnail` is optional. If you would like to add one, add a picture (PNG, JPG, or SVG) to your folder and replace `thumbnail.png` with its name.
+   
+   If you don't want to add a thumbnail, your game gets a colored tile with its first letter for the thumbnail. In this case, you can follow the template below (which does not have a line for optionalthumbnail):
+    
+    ```json
+    {
+    "title": "Your Game",
+    "author": "Your Name",
+    "description": "This is a concise description for your game.",
+    "tags": ["tutorial", "educational"]
+    }
+   ```
+
 
 6. Test it: run your folder's `index.html`.
 
-## 2. Submit it
+### Submit it
 
 1. Open this repository on GitHub and click into the games folder.
 2. Click Add file -> Upload files.
 3. Drag your game folder (only yours!!) into the page.
 4. If GitHub says you need to fork the repository, click the button to continue. This should only impact your folder/files, not anyone else's.
 5. Scroll down and click "Propose changes", then "Create pull request".
-6. Read the instructions for "3. Wait for the submission to be validated".
+6. Read the instructions for "Wait for the submission to be validated", which is at the end of these instructions.
 
 ## Git Knowledge Required
 
@@ -54,9 +66,9 @@ Knowing Git, terminal commands, or version control isn't necessary to contribute
    git push -u origin add-your-game
    ```
 5. On GitHub, click Compare & pull request on your fork.
-6. Read the instructions for "3. Wait for the submission to be validated".
+6. Read the instructions for "Wait for the submission to be validated".
 
-## 3. Wait for the submission to be validated
+## Wait for the submission to be validated
 
 Your submission will automatically be validated. The first time you submit, an organizational owner (a.k.a. any executive in the club) may need to approve it first before the automatic validation.
 
@@ -67,8 +79,8 @@ Your submission will automatically be validated. The first time you submit, an o
 ## Rules so every game plays nicely together
 
 - Keep everything inside your own folder. Never touch other people's folders or the files outside `games/`.
-- Use relative file names like `style.css` or `images/ship.png`. Never use `../` or full web addresses for your own files.
-- Your game must have an `index.html`** right inside your folder.
+- Use relative file names like `style.css` or `images/ship.png`.
+- Your game must have an `index.html` right inside your folder.
 - No `localStorage` or cookies. Games run in a sealed box where the browser blocks them. Keep scores in variables instead.
 - No outside services: don't load scripts or images from other websites, so your game works for everyone.
 - Wrap your JavaScript in `(() => { ... })();` like the template does. It's a good habit even though games can't affect each other.
