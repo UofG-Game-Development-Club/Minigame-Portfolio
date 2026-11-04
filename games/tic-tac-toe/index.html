@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="game">
+        <p id="status" class="status" aria-live="polite"></p>
+
+        <div id="board" class="board" role="group" aria-label="Tic-Tac-Toe board"></div>
+
+        <div class="scores">
+            <div class="score x"><span>X</span><strong id="score-x">0</strong></div>
+            <div class="score d"><span>Draws</span><strong id="score-d">0</strong></div>
+            <div class="score o"><span>O</span><strong id="score-o">0</strong></div>
+            </div>
+
+        <div class="actions">
+            <button id="new-round" type="button">New round</button>
+            <button id="reset" type="button" class="quiet">Reset scores</button>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

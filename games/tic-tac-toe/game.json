@@ -1,0 +1,7 @@
+{
+    "title": "Tic-Tac-Toe",
+    "author": "Robert Rodriguez",
+    "description": "3x3 grid. Opposing turns. First to three consecutive symbols wins.",
+    "tags": ["multiplayer"],
+    "optionalthumbnail": "iDontHaveAnImageYet.png"
+}
