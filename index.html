@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Minigame Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+    <header class="top">
+    <div class="wrap">
+        <h1>Minigame Portfolio</h1>
+        <p class="sub">The minigames created by UofG Game Development Club members. <span id="total"></span></p>
+    </div>
+    </header>
+
+    <main class="wrap">
+        <section class="controls" aria-label="Find a game">
+            <label class="search">
+            <span class="sr">Search games</span>
+            <input id="search" type="search" placeholder="Search by title, author, or tag" autocomplete="off">
+        </label>
+
+        <fieldset class="views">
+            <legend class="sr">View as</legend>
+            <label><input type="radio" name="view" value="gallery" checked><span>Gallery</span></label>
+            <label><input type="radio" name="view" value="list"><span>List</span></label>
+        </fieldset>
+        </section>
+
+    <div id="tags" class="tags" role="group" aria-label="Filter by tag" hidden></div>
+
+    <p id="count" class="count" aria-live="polite"></p>
+
+    <div id="games" class="games view-gallery"></div>
+
+    <div id="empty" class="empty" hidden>
+        <p id="empty-msg"></p>
+        <button id="clear" type="button" class="btn" hidden>Clear search</button>
+    </div>
+    </main>
+
+    <dialog id="player" aria-labelledby="player-title">
+        <div class="player-bar">
+        <div>
+            <h2 id="player-title"></h2>
+            <p id="player-author" class="by"></p>
+        </div>
+        <button id="player-close" type="button" class="btn">Close</button>
+    </div>
+    <!-- sandbox: each game runs in its own sealed box and can't touch this page or other games -->
+    <iframe id="frame" title="Game" sandbox="allow-scripts"></iframe>
+    <p id="player-desc" class="player-desc"></p>
+    </dialog>
+
+    <script src="portfolio.js"></script>
+</body>
+</html>
