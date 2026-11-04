@@ -1,6 +1,8 @@
 # Add your game
 
-You do not need Git, terminal commands, or knowledge on version control. Only a GitHub account and a web browser is necessary.
+Knowing Git, terminal commands, or version control isn't necessary to contribute! Having a GitHub account is enough to contribute. You can follow the instructions below if you're not comfortable with Git, or scroll down further for instructions if you are comfortable with Git.
+
+## No Git Knowledge Required
 
 ## 1. Make your game folder
 
@@ -31,14 +33,36 @@ You do not need Git, terminal commands, or knowledge on version control. Only a 
 3. Drag your game folder (only yours!!) into the page.
 4. If GitHub says you need to fork the repository, click the button to continue. This should only impact your folder/files, not anyone else's.
 5. Scroll down and click "Propose changes", then "Create pull request".
+6. Read the instructions for "3. Wait for the submission to be validated".
 
+## Git Knowledge Required
+
+1. Fork this repository, then clone your fork:
+   ```
+   git clone https://github.com/YOUR-USERNAME/Minigame-Portfolio.git
+   cd Minigame-Portfolio
+   ```
+2. Make a branch named after your game:
+   ```
+   git checkout -b add-your-game
+   ```
+3. Copy `games/_template` to `games/my-game` (lowercase letters, numbers, and hyphens only) and build your game inside it.
+4. Commit and push:
+   ```
+   git add games/my-game
+   git commit -m "Add my-game"
+   git push -u origin add-your-game
+   ```
+5. On GitHub, click Compare & pull request on your fork.
+6. Read the instructions for "3. Wait for the submission to be validated".
 
 ## 3. Wait for the submission to be validated
 
-Your submission will automatically be validated The first time you submit, an organizational owner (e.k.a. any exec in the club) may need to approve it first before the automatic validation.
+Your submission will automatically be validated. The first time you submit, an organizational owner (a.k.a. any executive in the club) may need to approve it first before the automatic validation.
 
 - Green check: You're done! A club executive will add your game.
 - Red X: click "details" and read the message. It should tell you what to fix. Fix the file on your computer and upload it again to the same pull request, or ask someone for help.
+
 
 ## Rules so every game plays nicely together
 
