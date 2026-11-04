@@ -1,0 +1,38 @@
+name: Check submission
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, labeled, unlabeled]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Check submission
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Fetch the main branch
+        run: git fetch origin "$BASE_REF"
+        env:
+          BASE_REF: ${{ github.base_ref }}
+
+      # Use the checker from the main branch, not from the pull request,
+      # so a submission can't change the rules it is judged by.
+      - name: Use trusted copy of the checker
+        run: git checkout "origin/$BASE_REF" -- scripts
+        env:
+          BASE_REF: ${{ github.base_ref }}
+
+      - name: Check the submission
+        run: node scripts/check-submission.js
+        env:
+          BASE_REF: ${{ github.base_ref }}

@@ -1,0 +1,5 @@
+# games.json is created automatically upon the site being deployed, it being ignored prevents merge conflicts
+games.json
+node_modules/
+.DS_Store
+.vscode/
