@@ -1,0 +1,16 @@
+/*
+    This is where you can stylize your minigame. What's listed below isn't mandatory
+    (you can change whatever you'd like), it's just there as an example
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: system-ui, sans-serif;
+}
